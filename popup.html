@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>金句卡片生成器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <link href="popup.css" rel="stylesheet">
+  <script src="html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <h1>金句卡片生成器</h1>
+    </header>
+
+    <!-- 卡片预览区 -->
+    <div class="preview-area">
+      <div id="cardPreview" class="card-preview">
+        <div id="cardContent" class="card-content"></div>
+      </div>
+    </div>
+
+    <!-- 样式设置区 -->
+    <div class="settings-area">
+      <!-- 主题选择 -->
+      <div class="setting-group">
+        <h3>主题风格</h3>
+        <div class="theme-options">
+          <button class="theme-btn" data-theme="simple">简约</button>
+          <button class="theme-btn" data-theme="retro">复古</button>
+          <button class="theme-btn" data-theme="modern">现代</button>
+        </div>
+      </div>
+
+      <!-- 背景设置 -->
+      <div class="setting-group">
+        <h3>背景样式</h3>
+        <div class="color-options">
+          <!-- 纯色背景 -->
+          <div class="color-group">
+            <span class="group-title">纯色</span>
+            <div class="colors solid-colors">
+              <button class="color-btn" data-color="#F8F9FA" style="background-color: #F8F9FA"></button>
+              <button class="color-btn" data-color="#FFE5E5" style="background-color: #FFE5E5"></button>
+              <button class="color-btn" data-color="#E8F4FF" style="background-color: #E8F4FF"></button>
+            </div>
+          </div>
+          <!-- 渐变背景 -->
+          <div class="color-group">
+            <span class="group-title">渐变</span>
+            <div class="colors gradient-colors">
+              <button class="color-btn" data-gradient="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)" 
+                style="background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)"></button>
+              <button class="color-btn" data-gradient="linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)"
+                style="background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)"></button>
+              <button class="color-btn" data-gradient="linear-gradient(120deg, #f6d365 0%, #fda085 100%)"
+                style="background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%)"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 字体设置 -->
+      <div class="setting-group">
+        <h3>字体样式</h3>
+        <div class="font-options">
+          <button class="font-btn" data-font="'Noto Serif SC'">思源宋体</button>
+          <button class="font-btn" data-font="'Ma Shan Zheng'">马善政毛笔字体</button>
+          <button class="font-btn" data-font="'ZCOOL XiaoWei'">站酷小薇体</button>
+          <button class="font-btn" data-font="'ZCOOL QingKe HuangYou'">站酷庆科黄油体</button>
+          <button class="font-btn" data-font="'Zhi Mang Xing'">智慧体</button>
+          <button class="font-btn" data-font="'Long Cang'">龙藏体</button>
+        </div>
+      </div>
+
+      <!-- 对齐方式 -->
+      <div class="setting-group">
+        <h3>文字对齐</h3>
+        <div class="align-options">
+          <button class="align-btn" data-align="left">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 3h18v2H3zm0 8h18v2H3zm0 8h18v2H3zm0-4h14v2H3zm0-8h14v2H3z"/></svg>
+          </button>
+          <button class="align-btn" data-align="center">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 3h18v2H3zm4 8h10v2H7zm0 8h10v2H7zm-4-4h18v2H3zm0-8h18v2H3z"/></svg>
+          </button>
+          <button class="align-btn" data-align="right">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 3h18v2H3zm4 8h14v2H7zm4 8h10v2H11zm-8-4h18v2H3zm0-8h18v2H3z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导出设��� -->
+    <div class="export-area">
+      <div class="export-options">
+        <select id="formatSelect">
+          <option value="png">PNG</option>
+          <option value="jpeg">JPG</option>
+          <option value="webp">WEBP</option>
+        </select>
+        <select id="qualitySelect">
+          <option value="1">最佳质量</option>
+          <option value="0.8">高质量</option>
+          <option value="0.6">中等质量</option>
+        </select>
+      </div>
+      <button id="exportBtn" class="export-btn">导出图片</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 

@@ -1,0 +1,31 @@
+#quote-card-icon {
+  position: absolute;
+  z-index: 99999;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: none;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#quote-card-icon:hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+#quote-card-icon svg {
+  color: #333333;
+}
+
+/* 禁用文本选择时的默认浏览器行为 */
+::selection {
+  background: rgba(0, 120, 255, 0.2);
+} 
