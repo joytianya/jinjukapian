@@ -40,5 +40,5 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'"
   },
-  "privacy_policy": "[你的隐私政策URL]"
+  "privacy_policy": "https://raw.githubusercontent.com/joytianya/jinjukapian/refs/heads/main/privacy.html"
 } 
